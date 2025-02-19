@@ -1,7 +1,12 @@
 import Link from "next/link";
 import x from "@/style/app.module.css";
 import y from "@/style/app2.module.css";
-import AppTable from "@/components/app.table";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home Page",
+  description: "This Home Page",
+};
 
 export default function Home() {
   return (
@@ -12,14 +17,13 @@ export default function Home() {
             <span className={y["red"]}>Facebook</span>
           </Link>
         </li>
-        <li>
-          <a href="/youtube">Youtube</a>
+        <li style={{ margin: "20px 0" }}>
+          <Link href="/youtube">Youtube</Link>
         </li>
-        <li>
-          <a href="/tiktok">Tiktok</a>
+        <li style={{ margin: "20px 0" }}>
+          <Link href="/tiktok">Tiktok</Link>
         </li>
       </ul>
-      <AppTable />
     </div>
   );
 }
